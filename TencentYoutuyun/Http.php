@@ -53,7 +53,7 @@ class Http
             }
         }else if( $ssl ){
             curl_setopt($curlHandle, CURLOPT_SSL_VERIFYPEER,false);   //true any ca
-            curl_setopt($curlHandle, CURLOPT_SSL_VERIFYHOST,1);       //check only host
+            //curl_setopt($curlHandle, CURLOPT_SSL_VERIFYHOST,1);       //新版curl扩展为1时会报错
             if (isset($rq['ssl_version'])) {
                 curl_setopt($curlHandle, CURLOPT_SSLVERSION, $rq['ssl_version']);
             } else {
